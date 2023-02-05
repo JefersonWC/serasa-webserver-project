@@ -42,8 +42,6 @@
 
 ## db-[99:101]-node.example.com
 
-[root@ip-172-31-13-159 ansible]# vim hosts
-[root@ip-172-31-13-159 ansible]# cat hosts
 # This is the default ansible 'hosts' file.
 #
 # It should live in /etc/ansible/hosts
