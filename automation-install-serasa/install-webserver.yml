@@ -1,0 +1,14 @@
+- hosts: Local
+  connection: local
+  tasks:
+
+#Create image web
+  - name: Create image web
+    shell: sudo docker build -t serasa-webserver:1.0 .
+    become: yes
+    become_user: root  
+
+#Deploy conteiner
+  - name: Deploy conteiner 
+    shell: sudo docker run --name serasa-webserver -d -p 80:80 -p 443:443 serasa-webserver:1.0
+
