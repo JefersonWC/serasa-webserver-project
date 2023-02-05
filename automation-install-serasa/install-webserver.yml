@@ -10,5 +10,5 @@
 
 #Deploy conteiner
   - name: Deploy conteiner 
-    shell: sudo docker run --name serasa-webserver -d -p 80:80 -p 443:443 serasa-webserver:1.0
+    shell: sudo docker run --name serasa-webserver --restart=always -d -p 80:80 -p 443:443 serasa-webserver:1.0
 
