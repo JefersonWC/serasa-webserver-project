@@ -1,0 +1,14 @@
+[Local]
+127.0.0.1
+
+[DEV]
+#informamkt-dev
+3.227.1.208 ansible_user=root
+
+[QA]
+#informamkt-qa
+18.205.109.85 ansible_user=root
+
+[HOMOLOG]
+
+[PROD]

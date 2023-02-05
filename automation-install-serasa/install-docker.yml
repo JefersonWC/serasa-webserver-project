@@ -1,0 +1,30 @@
+- hosts: Local
+  connection: local
+  tasks:
+
+#Update Repos
+  - name: Update repo
+    shell: sudo yum update -y
+    become: yes
+    become_user: root
+
+#Install packages
+  - name: Install packages from serasa-webserver-prod
+    shell: sudo yum install -y yum-utils -y && sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo -y
+    become: yes    
+
+#Install Docker
+  - name: Install Docker from serasa-webserver-prod
+    shell: sudo yum-config-manager --save --setopt=docker-ce-stable.skip_if_unavailable=true && sudo yum install docker docker-ce-cli containerd.io -y
+    become: yes  
+  
+
+#Begginer Docker
+  - name: start docker
+    shell: systemctl start docker
+    become: yes    
+
+#Install pip
+  - name: stall pip
+    shell: yum install pip && pip install docker-py
+    become: yes    
