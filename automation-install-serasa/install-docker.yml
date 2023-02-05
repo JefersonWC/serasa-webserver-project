@@ -28,3 +28,8 @@
   - name: Install pip
     shell: yum install pip -y && pip install docker-py
     become: yes    
+
+#Enable Docker Startup
+  - name: Enable Docker on Startup
+    shell: sudo sudo systemctl enable docker
+    become: yes
